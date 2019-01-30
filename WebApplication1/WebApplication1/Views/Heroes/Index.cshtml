@@ -1,0 +1,37 @@
+﻿@model WebApplication1.ViewModels.HeroViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@Html.ActionLink("Create", "Create", "Heroes", new { @class = "btn btn-primary" })*@
+
+<div>
+    <table class="table table-bordered table-hover">
+        <thead>        
+            <tr>
+                <th>Hero</th>
+                <th>Description</th>
+                <th>Health</th>
+            </tr>
+        </thead>
+            <tbody>               
+            @foreach (var item in Model.HeroList)
+            {
+                <tr>
+                    <td>
+                        @*@Html.ActionLink(item.Name, "Edit", "Heroes", new { })*@ 
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Description
+                    </td>
+                    <td>
+                        @item.Health
+                    </td>
+                </tr>
+            }
+            </tbody>
+    </table>
+</div> 
+
